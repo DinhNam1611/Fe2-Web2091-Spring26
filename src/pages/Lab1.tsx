@@ -1,4 +1,4 @@
-import { Button, Input, Layout } from 'antd'
+import { Button, Input, Layout, Table } from 'antd'
 import React from 'react'
 import { Form } from 'antd'
 
@@ -8,6 +8,18 @@ function Lab1() {
     const onFinish = (values: any) => {
         console.log("Success:", values);
     }
+
+    const columns = [
+        { title: "Name", dataIndex: "name" },
+        { title: "Email", dataIndex: "email" },
+        { title: "Role", dataIndex: "role" },
+    ]
+
+    const data = [
+        { key: 1, name: "John", email: "john@example.com", role: "User" },
+        { key: 2, name: "Jane", email: "jane@example.com", role: "Admin" },
+        { key: 3, name: "Bob", email: "bob@example.com", role: "User" },
+    ];
     return (
         <div>
             <Layout>
@@ -44,6 +56,8 @@ function Lab1() {
                     </Button>
                 </Form.Item>
             </Form>
+
+            <Table columns={columns} dataSource={data} />
 
         </div>
     )
