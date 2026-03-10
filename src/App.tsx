@@ -61,6 +61,7 @@ function App() {
           >
             <Input placeholder="Email" />
           </Form.Item>
+
           <Form.Item
             name="password"
             rules={[{ required: true, message: "Nhập password" }]}
