@@ -1,5 +1,5 @@
-import { Button, Input, Layout, Table } from 'antd'
-import React from 'react'
+import { Button, Input, Layout, Modal, Table } from 'antd'
+import React, { useState } from 'react'
 import { Form } from 'antd'
 
 const { Header, SideBar, Content } = Layout
@@ -20,6 +20,8 @@ function Lab1() {
         { key: 2, name: "Jane", email: "jane@example.com", role: "Admin" },
         { key: 3, name: "Bob", email: "bob@example.com", role: "User" },
     ];
+
+    const [open, setOpen] = useState(false);
     return (
         <div>
             <Layout>
@@ -59,6 +61,42 @@ function Lab1() {
 
             <Table columns={columns} dataSource={data} />
 
+            <Button onClick={() => { setOpen(true) }} >Add User</Button>
+
+            <Modal
+                open={open}
+                onOk={() => { setOpen(false) }}
+                onCancel={() => { setOpen(false) }}
+            >
+                <Form onFinish={onFinish}>
+                    <Form.Item
+                        name="name"
+                        rules={[{ required: true, message: "Nhập Name" }]}
+                    >
+                        <Input placeholder="Name" />
+
+                    </Form.Item>
+                    <Form.Item
+                        name="email"
+                        rules={[{ required: true, message: "Nhập email" }]}
+                    >
+                        <Input placeholder="Email" />
+
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[{ required: true, message: "Nhập Password" }]}
+                    >
+                        <Input placeholder="Password" />
+
+                    </Form.Item>
+                    <Form.Item>
+                        <Button htmlType="submit" type="primary">
+                            Login
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </Modal>
         </div>
     )
 }
