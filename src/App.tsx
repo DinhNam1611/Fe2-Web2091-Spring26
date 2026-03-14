@@ -1,85 +1,65 @@
-import { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
-import { Form, Input, Button } from "antd";
-import { Layout } from "antd";
+import { Form, Input, Button, InputNumber, Select } from "antd";
+import { useState } from "react";
 
-const { Header, Content, Footer } = Layout;
+const ProductForm = () => {
+   const [data, setData] = useState(null);
+   
+     const onFinish = (values : any) => {
+       setData(values);
+     };
+   
+     return (
+       <div style={{ width: "400px", margin: "auto" }}>
+   
+         <h2>Thêm bài viết</h2>
+   
+         <Form layout="vertical" onFinish={onFinish}>
+   
+           <Form.Item label="Title" name="title">
+             <Input />
+           </Form.Item>
+   
+           <Form.Item label="Category" name="category">
+             <Select>
+               <Select.Option value="tech">Tech</Select.Option>
+               <Select.Option value="news">News</Select.Option>
+             </Select>
+           </Form.Item>
+   
+           <Form.Item label="Slug" name="slug">
+             <Input />
+           </Form.Item>
+   
+           <Form.Item label="Content" name="content">
+             <Input.TextArea />
+           </Form.Item>
+   
+           <Form.Item label="Image URL" name="image">
+             <Input />
+           </Form.Item>
+   
+           <Button type="primary" htmlType="submit">
+             Submit
+           </Button>
+   
+         </Form>
+   
+         {/* Hiển thị dữ liệu */}
+         {data && (
+           <div style={{ marginTop: "20px" }}>
+             <h3>Dữ liệu bài viết</h3>
+   
+             <p>Title: {data.title}</p>
+             <p>Category: {data.category}</p>
+             <p>Slug: {data.slug}</p>
+             <p>Content: {data.content}</p>
+   
+             <img src={data.image} width="200" />
+           </div>
+         )}
+   
+       </div>
+     );
+};
 
-function App() {
-  const onFinish = (values: any) => {
-    console.log("Success:", values);
-  }
-  return (
-    <>
-      <nav className="bg-blue-600 text-white shadow">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link to="#" className="text-xl font-semibold">
-            <strong>WEB2091 App</strong>
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="#" className="hover:text-gray-200">
-              Trang chủ
-            </Link>
-            <Link to="/list" className="hover:text-gray-200">
-              Danh sách
-            </Link>
-            <Link to="/add" className="hover:text-gray-200">
-              Thêm mới
-            </Link>
-          </div>
-
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="#" className="hover:text-gray-200">
-              Đăng nhập
-            </Link>
-            <Link to="#" className="hover:text-gray-200">
-              Đăng ký
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* MAIN CONTENT */}
-      <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>
-        <Button type="primary">Click me</Button>
-        <Button type="default">Click me</Button>
-        <Button type="dashed">Click me</Button>
-        <Button type="link">Click me</Button>
-        <Button type="text">Click me</Button>
-        <Layout>
-          <Header style={{ color: "white" }}>Header</Header>
-          <Content style={{ padding: 20 }}>Content</Content>
-          <Footer>Footer</Footer>
-        </Layout>
-
-        <Form onFinish={onFinish}>
-          <Form.Item
-            name="email"
-            rules={[{ required: true, message: "Nhập email" }]}
-          >
-            <Input placeholder="Email" />
-          </Form.Item>
-
-          <Form.Item
-            name="password"
-            rules={[{ required: true, message: "Nhập password" }]}
-          >
-            <Input placeholder="password" />
-          </Form.Item>
-
-          <Form.Item>
-            <Button htmlType="submit" type="primary">
-              Login
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-
-      <Toaster />
-    </>
-  );
-}
-
-export default App;
+export default ProductForm;
