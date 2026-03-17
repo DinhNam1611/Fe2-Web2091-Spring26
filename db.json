@@ -1,4 +1,83 @@
 {
-  "products": [],
+  "stories": [
+    {
+      "title": "sdad",
+      "author": "asdads",
+      "image": "adasdas",
+      "description": "asdasda",
+      "id": 1
+    },
+    {
+      "title": "sdad",
+      "author": "asdads",
+      "image": "adasdas",
+      "description": "asdasda",
+      "id": 2
+    },
+    {
+      "title": "sadsada",
+      "author": "sdada",
+      "image": "dasdada",
+      "description": "dadsa",
+      "id": 3
+    },
+    {
+      "title": "sda",
+      "author": "ádad",
+      "image": "sadad",
+      "description": "ádad",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "title": "Bánh Bao",
+      "description": "Rat ngon",
+      "active": true,
+      "id": 1
+    },
+    {
+      "title": "sdadas",
+      "description": "sdada",
+      "active": true,
+      "id": 2
+    },
+    {
+      "title": "Hello",
+      "description": "nnnnn",
+      "active": true,
+      "id": 3
+    },
+    {
+      "title": "hello",
+      "description": "sdadada",
+      "active": true,
+      "id": 4
+    },
+    {
+      "title": "banh bo",
+      "description": "dsdsada",
+      "active": true,
+      "id": 5
+    },
+    {
+      "title": "sdad",
+      "description": "sdasd",
+      "active": true,
+      "id": 6
+    },
+    {
+      "title": "sdad",
+      "description": "sdasd",
+      "active": true,
+      "id": 7
+    },
+    {
+      "title": "banh mochi",
+      "description": "sdada",
+      "active": true,
+      "id": 8
+    }
+  ],
   "users": []
 }
