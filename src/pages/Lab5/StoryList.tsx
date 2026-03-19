@@ -1,5 +1,5 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { Spin, Table } from 'antd';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { Button, Popconfirm, Spin, Table } from 'antd';
 import axios from 'axios'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
@@ -18,14 +18,13 @@ function StoryList() {
 
     const queryClient = useQueryClient();
 
-    const handleDelete = async (id: number) => {
-        if (!window.confirm("Ban co chac chan muon xoa truyen nay?")) {
-            return
-        }
-        await axios.delete(`http://localhost:3000/stories/${id}`);
-        queryClient.invalidateQueries({ queryKey: ["stories"] });
-        toast.success("Xoa truyen thanh cong!");
-    }
+    const { mutate } = useMutation({
+        mutationFn: async (id: number) =>
+            await axios.delete(`http://localhost:3000/stories/${id}`),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["stories"] });
+        },
+    });
 
     // 🔥 FILTER
     const filteredData = data?.filter((item: any) =>
@@ -47,12 +46,15 @@ function StoryList() {
         {
             title: "Action",
             render: (_: any, record: any) => (
-                <button
-                    className='bg-red-500 text-white px-4 py-2 rounded'
-                    onClick={() => handleDelete(record.id)}
+                <Popconfirm
+                    title="Delete the story"
+                    description="Are you sure to delete this story?"
+                    okText="Yes"
+                    cancelText="No"
+                    onConfirm={() => mutate(record.id)}
                 >
-                    Xóa
-                </button>
+                    <Button danger>Delete</Button>
+                </Popconfirm>
             )
         }
     ]
