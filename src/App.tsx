@@ -5,6 +5,7 @@ import { Form, Input, Button } from "antd";
 import { Table } from "antd";
 import StoryForm from "./pages/Lab4";
 import Lab4 from "./pages/Lab4/Lab4";
+import StoryList from "./pages/Lab5/StoryList";
 
 const { Header, Content, Footer } = Layout;
 function App() {
@@ -83,7 +84,7 @@ function App() {
         <Layout>
           <Header style={{ color: "white" }}>Header</Header>
           <Content style={{ padding: 20 }}>
-            <Lab4 />
+            <StoryList />
             {/* <Form layout="vertical" onFinish={onFinish}>
               <Form.Item
                 label="Username"

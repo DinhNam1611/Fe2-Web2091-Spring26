@@ -1,32 +1,20 @@
 {
   "stories": [
     {
-      "title": "sdad",
+      "title": "Ruou vang",
       "author": "asdads",
       "image": "adasdas",
       "description": "asdasda",
+      "createdAt": "2-2-2020",
       "id": 1
     },
     {
-      "title": "sdad",
+      "title": "banh bo",
       "author": "asdads",
       "image": "adasdas",
       "description": "asdasda",
+      "createdAt": "2-2-2020",
       "id": 2
-    },
-    {
-      "title": "sadsada",
-      "author": "sdada",
-      "image": "dasdada",
-      "description": "dadsa",
-      "id": 3
-    },
-    {
-      "title": "sda",
-      "author": "ádad",
-      "image": "sadad",
-      "description": "ádad",
-      "id": 4
     }
   ],
   "categories": [
@@ -77,6 +65,12 @@
       "description": "sdada",
       "active": true,
       "id": 8
+    },
+    {
+      "title": "Hello",
+      "description": "dsadada",
+      "active": true,
+      "id": 9
     }
   ],
   "users": []
