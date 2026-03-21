@@ -1,8 +1,28 @@
 {
   "stories": [
     {
-      "title": "Ruou vang do",
+      "title": "One picece phan 7",
+      "author": "KImaki",
+      "image": "/wp-content/uploads/2025/04/dao-hai-tac-16569-thumb.webp",
+      "desription": "jasdsadasdasjdasdja",
+      "createdAt": "2-2-2001",
       "id": 1
+    },
+    {
+      "title": "One picece",
+      "author": "KImaki",
+      "image": "/wp-content/uploads/2025/04/dao-hai-tac-16569-thumb.webp",
+      "desription": "jasdsadasdasjdasdja",
+      "createdAt": "2-2-2001",
+      "id": 2
+    },
+    {
+      "title": "One picece",
+      "author": "KImaki",
+      "image": "/wp-content/uploads/2025/04/dao-hai-tac-16569-thumb.webp",
+      "description": "jasdsadasdasjdasdja",
+      "createdAt": "2-2-2001",
+      "id": 3
     }
   ],
   "categories": [

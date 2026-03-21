@@ -4,6 +4,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import EditStory from '../Lab6/EditStory';
+import { Link } from 'react-router-dom';
 
 function StoryList() {
 
@@ -36,7 +37,7 @@ function StoryList() {
         { title: "ID", dataIndex: "id" },
         { title: "Title", dataIndex: "title" },
         { title: "Author", dataIndex: "author" },
-        { title: "Image", dataIndex: "image" },
+        { title: "Image", render: (data: string) => <img width={100} src={data} alt="story" /> },
         { title: "Description", dataIndex: "description" },
         {
             title: "Created At",
@@ -47,16 +48,24 @@ function StoryList() {
         {
             title: "Action",
             render: (_: any, record: any) => (
-                <Popconfirm
-                    title="Delete the story"
-                    description="Are you sure to delete this story?"
-                    okText="Yes"
-                    cancelText="No"
-                    onConfirm={() => mutate(record.id)}
-                >
-                    <Button danger>Delete</Button>
-                </Popconfirm>
-            )
+                <div style={{ display: "flex", gap: 8 }}>
+
+                    <Link to={`/edit/${record.id}`}>
+                        <Button type="primary">Edit</Button>
+                    </Link>
+
+                    <Popconfirm
+                        title="Delete the story"
+                        description="Are you sure to delete this story?"
+                        okText="Yes"
+                        cancelText="No"
+                        onConfirm={() => mutate(record.id)}
+                    >
+                        <Button danger>Delete</Button>
+                    </Popconfirm>
+
+                </div>
+            ),
         }
     ]
 
@@ -66,7 +75,6 @@ function StoryList() {
     return (
         <>
             {/* SEARCH */}
-            <EditStory/>
             <input
                 className='border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4'
                 type="text"
