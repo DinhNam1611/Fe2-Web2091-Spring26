@@ -1,11 +1,12 @@
 import { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Image, InputNumber, Layout, Select } from "antd";
 import { Form, Input, Button } from "antd";
 import { Table } from "antd";
 import StoryForm from "./pages/Lab4";
 import Lab4 from "./pages/Lab4/Lab4";
 import StoryList from "./pages/Lab5/StoryList";
+import EditStory from "./pages/Lab6/EditStory";
 
 const { Header, Content, Footer } = Layout;
 function App() {
@@ -77,6 +78,10 @@ function App() {
           </div>
         </div>
       </nav>
+
+      <Routes>
+        <Route  path="/edit/:id" element={<EditStory/>}/>
+      </Routes>
 
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">

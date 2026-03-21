@@ -3,6 +3,7 @@ import { Button, Popconfirm, Spin, Table } from 'antd';
 import axios from 'axios'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import EditStory from '../Lab6/EditStory';
 
 function StoryList() {
 
@@ -65,6 +66,7 @@ function StoryList() {
     return (
         <>
             {/* SEARCH */}
+            <EditStory/>
             <input
                 className='border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4'
                 type="text"

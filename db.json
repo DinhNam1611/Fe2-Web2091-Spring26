@@ -1,20 +1,8 @@
 {
   "stories": [
     {
-      "title": "Ruou vang",
-      "author": "asdads",
-      "image": "adasdas",
-      "description": "asdasda",
-      "createdAt": "2-2-2020",
+      "title": "Ruou vang do",
       "id": 1
-    },
-    {
-      "title": "banh bo",
-      "author": "asdads",
-      "image": "adasdas",
-      "description": "asdasda",
-      "createdAt": "2-2-2020",
-      "id": 2
     }
   ],
   "categories": [
