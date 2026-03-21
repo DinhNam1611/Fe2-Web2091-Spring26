@@ -79,17 +79,20 @@ function App() {
         </div>
       </nav>
 
-      <Routes>
-        <Route  path="/edit/:id" element={<EditStory/>}/>
-      </Routes>
+      
 
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>
         <Layout>
           <Header style={{ color: "white" }}>Header</Header>
+          
           <Content style={{ padding: 20 }}>
-            <StoryList />
+            <Routes>
+              <Route path="/" element={<StoryList />} >
+                <Route path="/edit/:id" element={<EditStory />} />
+              </Route>
+            </Routes>
             {/* <Form layout="vertical" onFinish={onFinish}>
               <Form.Item
                 label="Username"
